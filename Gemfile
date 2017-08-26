@@ -18,11 +18,12 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'spree', '~> 3.3.0.rc1'
-gem 'spree_auth_devise', '~> 3.3'
-gem 'spree_gateway', '~> 3.3'
-gem 'spree_slider', github: 'spree-contrib/spree_slider'
-gem 'spree_braintree_vzero', github: 'spree-contrib/spree_braintree_vzero'
+# gem 'spree', '~> 3.3.0.rc1'
+# gem 'spree_auth_devise', '~> 3.3'
+# gem 'spree_gateway', '~> 3.3'
+# gem 'spree_slider', github: 'spree-contrib/spree_slider'
+# gem 'spree_braintree_vzero', github: 'spree-contrib/spree_braintree_vzero'
+gem 'rails_12factor', group: :production
 gem 'haml'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
