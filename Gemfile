@@ -23,7 +23,6 @@ gem 'spree_auth_devise', '~> 3.3'
 gem 'spree_gateway', '~> 3.3'
 gem 'spree_slider', github: 'spree-contrib/spree_slider'
 gem 'spree_braintree_vzero', github: 'spree-contrib/spree_braintree_vzero'
-gem 'rails_12factor', group: :production
 gem 'haml'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -56,5 +55,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :production do
+  gem 'rails_12factor'
+  gem 'pg', '~> 0.18'
+end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
