@@ -1,11 +1,33 @@
-%nav.navbar.navbar-expand
+-# %nav.navbar.navbar-expand
+-#   %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+-#     %span.navbar-toggler-icon
+-#   #navbarSupportedContent.collapse.navbar-collapse
+-#     %ul.nav.navbar-nav{"data-hook" => ""}
+-#       %li{"data-hook" => "", :id => "home-link nav-item"}= link_to Spree.t(:home), spree.root_path
+-#     %ul.nav.navbar-nav{"data-hook" => ""}
+-#       %li{"data-hook" => "", :id => "link-to-cart nav-item"}
+-#         %noscript
+-#           = link_to_cart
+-#         \&#160;
+-#       :javascript
+-#         Spree.fetch_cart()
+-#       - if spree_current_user
+-#         %li.nav-item= link_to Spree.t(:my_account), spree.account_path
+-#         %li.nav-item= link_to Spree.t(:logout), spree.logout_path
+-#       - else
+-#         %li#link-to-login.nav-item= link_to Spree.t(:login), spree.login_path
+-#     %ul#nav-bar.nav.navbar-nav.navbar-right{"data-hook" => ""}
+-#       %li#search-bar{"data-hook" => ""}
+-#         = render partial: 'spree/shared/search'
+
+
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light
   %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
     %span.navbar-toggler-icon
   #navbarSupportedContent.collapse.navbar-collapse
-    %ul.nav.navbar-nav{"data-hook" => ""}
-      %li{"data-hook" => "", :id => "home-link nav-item"}= link_to Spree.t(:home), spree.root_path
-    %ul.nav.navbar-nav{"data-hook" => ""}
-      %li{"data-hook" => "", :id => "link-to-cart nav-item"}
+    %ul.navbar-nav.mr-auto{"data-hook" => ""}
+      %li.nav-item.active{"data-hook" => "", :id => "home-link nav-item"}= link_to Spree.t(:home), spree.root_path
+      %li.nav-item{"data-hook" => "", :id => "link-to-cart nav-item"}
         %noscript
           = link_to_cart
         \&#160;
@@ -16,24 +38,6 @@
         %li.nav-item= link_to Spree.t(:logout), spree.logout_path
       - else
         %li#link-to-login.nav-item= link_to Spree.t(:login), spree.login_path
-    %ul#nav-bar.nav.navbar-nav.navbar-right{"data-hook" => ""}
-      %li#search-bar{"data-hook" => ""}
-        = render partial: 'spree/shared/search'
-
-
-%nav.navbar.navbar-expand-lg.navbar-light.bg-light
-  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
-    %span.navbar-toggler-icon
-  #navbarSupportedContent.collapse.navbar-collapse
-    %ul.navbar-nav.mr-auto{"data-hook" => ""}
-      %li.nav-item.active
-        %a.nav-link{:href => "#"}
-          Home
-          %span.sr-only (current)
-      %li.nav-item
-        %a.nav-link{:href => "#"} Link
       %li.nav-item
         %a.nav-link.disabled{:href => "#"} Disabled
-    %form.form-inline.my-2.my-lg-0
-      %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "text"}/
-      %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
+    = render partial: 'spree/shared/search'
