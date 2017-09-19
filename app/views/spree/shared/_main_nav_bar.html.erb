@@ -1,25 +1,30 @@
-<nav class="navbar">
-  <ul class="nav navbar-nav" data-hook>
-    <li id="home-link" data-hook><%= link_to Spree.t(:home), spree.root_path %></li>
-  </ul>
-  <ul class="nav navbar-nav" data-hook>
-    <li id="link-to-cart" data-hook>
-      <noscript>
-        <%= link_to_cart %>
-      </noscript>
-      &nbsp;
-    </li>
-    <script>Spree.fetch_cart()</script>
-    <% if spree_current_user %>
-      <li><%= link_to Spree.t(:my_account), spree.account_path %></li>
-      <li><%= link_to Spree.t(:logout), spree.logout_path %></li>
-    <% else %>
-      <li id="link-to-login"><%= link_to Spree.t(:login), spree.login_path %></li>
-    <% end %>
-  </ul>
-  <ul id="nav-bar" class="nav navbar-nav navbar-right" data-hook>
-    <li id="search-bar" data-hook>
-      <%= render partial: 'spree/shared/search' %>
-    </li>
-  </ul>
+<nav class="navbar navbar-expand-lg">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="nav navbar-nav" data-hook>
+      <li id="home-link nav-item" data-hook><%= link_to Spree.t(:home), spree.root_path %></li>
+    </ul>
+    <ul class="nav navbar-nav" data-hook>
+      <li id="link-to-cart nav-item" data-hook>
+        <noscript>
+          <%= link_to_cart %>
+        </noscript>
+        &nbsp;
+      </li>
+      <script>Spree.fetch_cart()</script>
+      <% if spree_current_user %>
+        <li class="nav-item"><%= link_to Spree.t(:my_account), spree.account_path %></li>
+        <li class="nav-item"><%= link_to Spree.t(:logout), spree.logout_path %></li>
+      <% else %>
+        <li id="link-to-login" class="nav-item"><%= link_to Spree.t(:login), spree.login_path %></li>
+      <% end %>
+    </ul>
+    <ul id="nav-bar" class="nav navbar-nav navbar-right" data-hook>
+      <li id="search-bar" data-hook>
+        <%= render partial: 'spree/shared/search' %>
+      </li>
+    </ul>
+  </div>
 </nav>
